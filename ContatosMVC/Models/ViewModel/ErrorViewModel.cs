@@ -1,4 +1,4 @@
-namespace ContatosMVC.Models
+namespace ContatosMVC.Models.ViewModel
 {
     public class ErrorViewModel
     {
