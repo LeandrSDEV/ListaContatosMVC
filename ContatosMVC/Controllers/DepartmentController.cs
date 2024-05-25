@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using ContatosMVC.Data;
+﻿using ContatosMVC.Data;
 using ContatosMVC.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ContatosMVC.Controllers
 {
@@ -22,7 +17,7 @@ namespace ContatosMVC.Controllers
         // GET: Department
         public async Task<IActionResult> Index()
         {
-            return View(await _context.DepartmentModel.ToListAsync());
+            return View(await _context.Department.ToListAsync());
         }
 
         // GET: Department/Details/5
@@ -33,7 +28,7 @@ namespace ContatosMVC.Controllers
                 return NotFound();
             }
 
-            var departmentModel = await _context.DepartmentModel
+            var departmentModel = await _context.Department
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (departmentModel == null)
             {
@@ -73,7 +68,7 @@ namespace ContatosMVC.Controllers
                 return NotFound();
             }
 
-            var departmentModel = await _context.DepartmentModel.FindAsync(id);
+            var departmentModel = await _context.Department.FindAsync(id);
             if (departmentModel == null)
             {
                 return NotFound();
@@ -124,7 +119,7 @@ namespace ContatosMVC.Controllers
                 return NotFound();
             }
 
-            var departmentModel = await _context.DepartmentModel
+            var departmentModel = await _context.Department
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (departmentModel == null)
             {
@@ -139,10 +134,10 @@ namespace ContatosMVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var departmentModel = await _context.DepartmentModel.FindAsync(id);
+            var departmentModel = await _context.Department.FindAsync(id);
             if (departmentModel != null)
             {
-                _context.DepartmentModel.Remove(departmentModel);
+                _context.Department.Remove(departmentModel);
             }
 
             await _context.SaveChangesAsync();
@@ -151,7 +146,7 @@ namespace ContatosMVC.Controllers
 
         private bool DepartmentModelExists(int id)
         {
-            return _context.DepartmentModel.Any(e => e.Id == id);
+            return _context.Department.Any(e => e.Id == id);
         }
     }
 }
