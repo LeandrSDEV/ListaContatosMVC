@@ -1,5 +1,7 @@
 using ContatosMVC.Data;
 using Microsoft.EntityFrameworkCore;
+using ContatosMVC.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ContatosMVCContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ContatosMVCContext") ?? throw new InvalidOperationException("Connection string 'ContatosMVCContext' not found.")));
@@ -13,6 +15,7 @@ builder.Services.AddRazorPages().AddMvcOptions(options => { options.MaxModelVali
 builder.Services.AddRazorPages().AddMvcOptions(options => { options.ModelBindingMessageProvider.SetValueMustNotBeNullAccessor(_ => "Este campo é obrigatório"); });
 
 builder.Services.AddScoped<SeedingService>();
+builder.Services.AddScoped<SellerService>();
 
 var app = builder.Build();
 

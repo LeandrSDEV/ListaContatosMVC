@@ -13,6 +13,11 @@ namespace ContatosMVC.Data
             _context = context;
         }
 
+        public void ConfigureService(SeedingService seedingService)
+        {
+
+        }
+
         public void Seed()
         {
             //Operação responsaél por popular o banco de dados
