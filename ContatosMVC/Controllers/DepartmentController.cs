@@ -54,7 +54,7 @@ namespace ContatosMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Email")] DepartmentModel departmentModel)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Email")] Department departmentModel)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace ContatosMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Email")] DepartmentModel departmentModel)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Email")] Department departmentModel)
         {
             if (id != departmentModel.Id)
             {

@@ -1,4 +1,4 @@
-﻿@model ContatosMVC.Models.DepartmentModel
+﻿@model ContatosMVC.Models.Department
 
 @{
     ViewData["Title"] = "Details";
@@ -15,12 +15,6 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
         </dd>
     </dl>
 </div>

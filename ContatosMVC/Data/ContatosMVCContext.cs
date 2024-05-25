@@ -14,6 +14,6 @@ namespace ContatosMVC.Data
         {
         }
 
-        public DbSet<ContatosMVC.Models.DepartmentModel> DepartmentModel { get; set; }
+        public DbSet<ContatosMVC.Models.Department> DepartmentModel { get; set; }
     }
 }
